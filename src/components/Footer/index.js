@@ -45,13 +45,12 @@ const Footer = () => {
             </div>
             <div className="w-full mt-24 relative font-medium border-t border-solid \
                     border-light py-6 px-8 flex flex-row items-center justify-between">
-                <span className="text-center">&copy; 2023 Ivar Alexander Abusdal. All rights reserved.</span>
+                <span className="text-center">&copy; 2023 Ivar A. Abusdal. All rights reserved.</span>
                 <Link href="/sitemap.xml" className="text-center underline">
                     sitemap.xml
                 </Link>
                 <div cassName="text-center">
-                    Made with &#x1F608; by
-                    <a href="http://abusdal.pro" className="text-center">
+                    Made with &#x1F608; by <a href="http://abusdal.pro" className="text-center">
                     Ivar Alexander Abusdal
                     </a>
                 </div>
