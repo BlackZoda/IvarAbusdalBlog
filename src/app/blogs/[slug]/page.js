@@ -35,14 +35,27 @@ export default function BlogPage({ params }) {
 
             <div className="grid grid-cols-12 gap-16 mt-8 mx-16">
                <div className="col-span-4">
-                    <details>
-                        <summary>Table Of Content</summary>
-                        <ul>
+                    <details className="border-[1px] border-solid border-dark text-dark \
+                            rounded-lg p-4 sticky top-6 max-h-[80vh] overflow-hidden \
+                            overflow-auto" open >
+                        <summary className="text-lg font-semibold capitalize cursor-pointer">Table Of Content</summary>
+                        <ul className="mt-4 font-in text-base">
                             {
                                 blog.toc.map((heading) => {
-                                    return <li>
-                                        <a href={`#${heading.slug}`}>
-                                            <span>{heading.text}</span>
+                                    return <li key={`#${heading.slug}`} className="py-1">
+                                        <a href={`#${heading.slug}`}
+                                            data-level={heading.level}
+                                            className="data-[level=two]:pl-0 \
+                                                    data-[level=two]:pt-2 \
+                                                    data-[level=two]:border-t \
+                                                    border-solid border-dark/40 \
+                                                    data-[level=three]:pl-6 \
+                                                    flex items-center justify-start"
+                                        >
+                                            {
+                                                heading.level === "three" ? <span className="flex w-1 h-1 rounded-full bg-dark mr-2">&nbsp;</span> : null
+                                            }
+                                            <span className="hover:underline">{heading.text}</span>
                                         </a>
                                     </li>   
                                 })
