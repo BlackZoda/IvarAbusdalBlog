@@ -3,6 +3,7 @@ import Tag from '@/src/components/Elements/Tag';
 import React from 'react';
 import Image from 'next/image';
 import BlogDetails from '@/src/components/Blog/BlogDetails';
+import RenderMdx from '@/src/components/Blog/RenderMdx';
 
 export default function BlogPage({ params }) {
 
@@ -29,7 +30,28 @@ export default function BlogPage({ params }) {
                         height={blog.image.height}
                         className="aspect-square w-full h-full object-cover object-center" />
             </div>
+
             <BlogDetails blog={blog} slug={params.slug} />
+
+            <div className="grid grid-cols-12 gap-16 mt-8 mx-16">
+               <div className="col-span-4">
+                    <details>
+                        <summary>Table Of Content</summary>
+                        <ul>
+                            {
+                                blog.toc.map((heading) => {
+                                    return <li>
+                                        <a href={`#${heading.slug}`}>
+                                            <span>{heading.text}</span>
+                                        </a>
+                                    </li>   
+                                })
+                            }
+                        </ul>
+                    </details>
+                </div> 
+                <RenderMdx blog={blog} />
+            </div>
         </article>
     );
 }

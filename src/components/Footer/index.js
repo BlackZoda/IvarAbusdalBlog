@@ -49,7 +49,7 @@ const Footer = () => {
                 <Link href="/sitemap.xml" className="text-center underline">
                     sitemap.xml
                 </Link>
-                <div cassName="text-center">
+                <div className="text-center">
                     Made with &#x1F608; by <a href="http://abusdal.pro" className="text-center">
                     Ivar Alexander Abusdal
                     </a>
