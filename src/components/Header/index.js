@@ -1,10 +1,16 @@
+"use client"
+
 import React from 'react'
 import Logo from './logo';
 import Link from 'next/link';
 import { LinkedinIcon, GithubIcon, SunIcon } from '../icons';
 import { siteMetaData } from '@/src/utils/siteMetaData';
+import { useThemeSwitch } from '../Hooks/useThemeSwitch';
 
 const Header = () => {
+
+    const [mode, setMode] = useThemeSwitch();
+
     return (
         <header className="w-full p-6 px-12 flex items-center justify-between">
             <Logo />
@@ -15,7 +21,11 @@ const Header = () => {
                 <Link href="/categories/all" className="mx-2">Categories</Link>
                 <Link href="/about" className="mx-2">About</Link>
                 <Link href="http://www.abusdal.pro" target="_blank" className="mx-2 text-accent font-bold">CV</Link>
-                <button className="mx-2" type="button"><SunIcon /></button>
+                <button className="mx-2"
+                        type="button"
+                        onClick={() => setMode(mode === "light" ? "dark" : "light")}>
+                    <SunIcon />
+                </button>
             </nav>
             <div>
                 <a href={siteMetaData.linkedin} target="_blank" rel="noreferrer" className="inline-block w-6 h-6 mr-4">
