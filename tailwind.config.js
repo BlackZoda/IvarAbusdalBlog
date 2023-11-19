@@ -10,14 +10,18 @@
             extend: {
                 colors: {
                     dark: "#1b1b1b",
-                    light: "#fff",
-                    accent: "#7B00D3", 
-                    accentDark: "#ffdb4d",
+                    light: "#E8E1D8",
+                    accent: "#52d", 
+                    accentDark: "#fc7",
                     gray: "#747474",
                 },
                 fontFamily: {
                     mr: ["var(--font-mr)"],
                     in: ["var(--font-in)"],
+                },
+                screens: {
+                    sxl: "1180px",
+                    xs: "480px",
                 }
             },
         },

@@ -5,11 +5,14 @@ import profileImg from "@/public/iaa_logo.svg"
 const Logo = () => {
     return (
         <Link href="/" className="flex items-center text-dark dark:text-light">
-            <div className="w-10 rounded-full overflow-hidden mx-3">
+            <div className="w-10 lg:w-12 rounded-full overflow-hidden mr-1 md:mx-2">
                 <Image src={profileImg} alt="Ivar Alexander Abusdal"
                         className="w-full h-auto p-1 rounded-full bg-dark" />
             </div>
-            <span className="font-bold dark:font-semibold text-xl">Ivar A. Abusdal</span>
+            <span className="font-bold dark:font-semibold text-base md:text-xl">
+                Ivar <span className="hidden md:inline lg:hidden">A.</span>
+                <span className="inline sm:hidden lg:inline">Alexander</span> Abusdal
+            </span>
         </Link>
     )
 }
