@@ -19,7 +19,7 @@ const Footer = () => {
     console.error(errors);
     
     return (
-        <footer className="mt-16 rounded-2xl bg-dark/90 dark:bg-accentDark/60 m-5 sm:m-10 flex flex-col
+        <footer className="mt-16 rounded-2xl bg-dark/90 dark:bg-accentDark/80 m-5 sm:m-10 flex flex-col
                 items-center text-light dark:text-dark">
             <h3 className="mt-16 font-medium text-center dark:font-bold capitalize text-xl
                     xs:text-2xl sm:text-3xl lg:text-4xl">
@@ -29,12 +29,13 @@ const Footer = () => {
                     text-sm sm:text-base">
                 Subscribe to learn more and get notified about new updates.
             </p>
-            <form onSubmit={handleSubmit(onSubmit)} className="mt-6 w-fit sm:min-w-[386px]
-                    flex items-stretch bg-light dark:bg-dark p-1 sm:p-2 rounded mx-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="mt-6 w-fit
+                    xs:min-w-[400px] lg:min-w-[600px]
+                    flex items-stretch bg-light dark:bg-dark p-1 sm:p-2 rounded mx-2">
                 <input type="email"
                         placeholder="Enter your email"
                         {...register("email", { required: true, maxLength: 80 })}
-                        className="w-full bg-transparent pl-2 text-dark focus:border-dark
+                        className="w-full bg-transparent pl-2 text-dark dark:text-light focus:border-dark
                                 focus:ring-0 border-0 border-b mr-2 pb-1" />
 
                 <input type="submit" className="bg-dark dark:bg-light text-light dark:text-dark
