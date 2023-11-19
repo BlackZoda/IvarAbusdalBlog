@@ -5,8 +5,8 @@ import BlogLayoutThree from '../Blog/BlogLayoutThree';
 
 const RecentPosts = ({blogs}) => {
     const sortedBlogs = sortBlogs(blogs);
-0
-    return (<section className="w-full mt-16 sm:mt-20 md:mt-32 px-5 sm:px-10
+
+    return (<section className="w-full mt-16 sm:mt-20 md:mt-32 pb-0 px-5 sm:px-10
                 md:px-16 xsl:px-24 flex flex-col items-center">
         <div className="flex w-full justify-between">
             <h2 className="w-fit inline-block font-bold capitalize text-xl xs:text-2xl sm:text-3xl
