@@ -2,9 +2,9 @@ import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import React from 'react';
 import { slug } from 'github-slugger';
+import ViewCounter from './ViewCounter';
 
 const BlogDetails = ({blog, slug: blogSlug}) => {
-    console.log(blog);
     return (
         <div className="px-10 bg-accent text-light py-2 flex items-center justify-around \
                 flex-wrap text-xl font-medium mx-10 rounded-lg">
@@ -12,7 +12,7 @@ const BlogDetails = ({blog, slug: blogSlug}) => {
                 {format(parseISO(blog.publishedAt), "MMMM d, yyyy")}
             </time>
             <span className="m-3">
-                10 views
+                <ViewCounter slug={blogSlug} />
             </span>
             <div className="m-3">
                 {blog.readingTime.text}

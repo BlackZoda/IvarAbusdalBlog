@@ -15,7 +15,7 @@ const BlogLayoutOne = ({blog}) => {
                 alt={blog.title}
                 width={blog.image.width}
                 height={blog.image.height}
-                className="w-full h-full object-center object-contain rounded-xl \
+                className="w-full h-full object-cover object-center rounded-xl \
                         group-hover:scale-105 transition-all ease duration-300"/>
 
             <div className="w-full absolute bottom-0 p-10 z-20">

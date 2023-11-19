@@ -25,6 +25,16 @@ export async function generateStaticParams() {
     return paths;
 }
 
+export async function generateMetadata({ params }) {
+
+    return {
+        title: `${params.slug} blogs`,
+        description: `Learn more about ${params.slug === "all" ?
+                "programming, illustration, and graphic design" :
+                params.slug.replace("-", " ")} through my collection of blogs, tutorials, and articles.`,
+    }
+}
+
 const CategoryPage = ({ params }) => {
 
     const allCategories = ["all"];

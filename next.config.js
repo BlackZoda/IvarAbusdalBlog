@@ -2,6 +2,7 @@
 
 const { withContentlayer } = require('next-contentlayer')
 
-const nextConfig = {}
+const nextConfig = {
+}
 
 module.exports = withContentlayer({ ...nextConfig });

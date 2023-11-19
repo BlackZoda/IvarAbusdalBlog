@@ -4,6 +4,7 @@ import React from "react";
 import { useForm } from 'react-hook-form';
 import { LinkedinIcon, GithubIcon } from "../icons";
 import Link from "next/link";
+import { siteMetaData } from "@/src/utils/siteMetaData";
 
 const Footer = () => {
     
@@ -13,7 +14,6 @@ const Footer = () => {
         formState: { errors },
     } = useForm();
     const onSubmit = data => console.log(data);
-    console.log(errors);
     
     return (
         <footer className="mt-16 rounded-2xl bg-dark m-10 flex flex-col \
@@ -36,10 +36,10 @@ const Footer = () => {
                         font-medium rounded px-5 py-1" />
             </form>
             <div className="flex items-center mt-8">
-                <a href="https://example.com" className="inline-block w-6 h-6 mr-4">
+                <a href={siteMetaData.linkedin} target="_blank" rel="noreferrer" className="inline-block w-6 h-6 mr-4">
                     <LinkedinIcon className="hover:scale-125 transition-all ease duration-200" />
                 </a>
-                <a href="https://example.com" className="inline-block w-6 h-6 mr-4 fill-white">
+                <a href={siteMetaData.github} target="_blank" rel="noreferrer" className="inline-block w-6 h-6 mr-4 fill-white">
                     <GithubIcon className="hover:scale-125 transition-all ease duration-200" />
                 </a>
             </div>
