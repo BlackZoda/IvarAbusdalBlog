@@ -6,7 +6,7 @@ import ViewCounter from './ViewCounter';
 
 const BlogDetails = ({blog, slug: blogSlug}) => {
     return (
-        <div className="px-2 lg:px-10 bg-accent dark:bg-accentDark/80 text-light dark:text-dark
+        <div className="px-2 lg:px-10 bg-accent/80 dark:bg-accentDark/80 text-light dark:text-dark
                 py-2 flex items-center justify-around
                 flex-wrap text-sm sm:text-lg md:text-xl font-medium mx-5 md:mx-10 rounded-lg">
             <time className="m-3">
