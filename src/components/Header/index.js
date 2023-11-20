@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Logo from './logo';
 import Link from 'next/link';
-import { LinkedinIcon, GithubIcon, SunIcon } from '../icons';
+import { LinkedinIcon, GithubIcon, SunIcon, MoonIcon } from '../icons';
 import { useThemeSwitch } from '../Hooks/useThemeSwitch';
 import siteMetaData from '@/src/utils/siteMetaData';
 
@@ -41,38 +41,38 @@ const Header = () => {
                     </div>
                 </div>
             </button>
-            <nav className="w-max py-3 px-5 border border-solid border-dark
-                    rounded-3xl text-lg top-20
-                    capitalize flex flex-col sm:hidden items-center fixed translate-x-1/2
-                    bg-light/80 backgrop-blur-sm z-50 transition-all ease duration-500"
+            <nav className="w-max py-3 px-5 border border-solid border-dark dark:border-light
+                    rounded-3xl text-lg top-20 capitalize flex flex-col sm:hidden items-center
+                    fixed translate-x-1/2 bg-light/80 dark:bg-dark/80 backdrop-blur-sm z-50
+                    transition-all ease duration-500 text-dark dark:text-light"
                     style={{
                         right: click ? "6rem" : "-15rem"
                     }}>
-                <Link href="/" className="hover:text-accent mt-1">Home</Link>
-                <Link href="/categories/all" className="my-2 hover:text-accent">Categories</Link>
-                <Link href="/about" className="my-0 hover:text-accent">About</Link>
+                <Link href="/" className="hover:text-accent dark:hover:text-accentDark mt-1">Home</Link>
+                <Link href="/categories/all" className="my-2 hover:text-accent dark:hover:text-accentDark">Categories</Link>
+                <Link href="/about" className="my-0 hover:text-accent dark:hover:text-accentDark">About</Link>
                 <Link href="http://www.abusdal.pro" target="_blank"
-                        className="my-2 hover:text-accent font-bold">CV</Link>
-                <button className="my-1"
+                        className="my-2 hover:text-accent dark:hover:text-accentDark font-semibold">CV</Link>
+                <button className="my-1 hover:text-accent dark:hover:text-accentDark"
                         type="button"
                         onClick={() => setMode(mode === "light" ? "dark" : "light")}>
-                    <SunIcon />
+                        { mode === "light" ? <MoonIcon /> : <SunIcon /> }
                 </button>
             </nav>
 
-            <nav className="w-max py-2 px-2 md:px-4 border border-solid border-dark
-                    rounded-full text-sm md:text-base lg:text-lg
-                    capitalize hidden sm:flex items-center fixed top-5 right-1/2 translate-x-1/2
-                    bg-light/80 backgrop-blur-sm z-50">
-                <Link href="/" className="hover:text-accent ml-1">Home</Link>
-                <Link href="/categories/all" className="mx-2 hover:text-accent">Categories</Link>
-                <Link href="/about" className="mx-0 hover:text-accent">About</Link>
+            <nav className="w-max py-2 px-2 md:px-4 border border-solid border-dark dark:border-light
+                    rounded-full text-sm md:text-base lg:text-lg capitalize hidden sm:flex
+                    items-center fixed top-5 right-1/2 translate-x-1/2 bg-light/80 dark:bg-dark/80
+                    backdrop-blur-sm z-50 text-dark dark:text-light">
+                <Link href="/" className="hover:text-accent dark:hover:text-accentDark ml-1">Home</Link>
+                <Link href="/categories/all" className="mx-2 hover:text-accent dark:hover:text-accentDark">Categories</Link>
+                <Link href="/about" className="mx-0 hover:text-accent dark:hover:text-accentDark">About</Link>
                 <Link href="http://www.abusdal.pro" target="_blank"
-                        className="mx-2 hover:text-accent font-bold">CV</Link>
-                <button className="mr-1"
+                        className="mx-2 hover:text-accent dark:hover:text-accentDark font-semibold">CV</Link>
+                <button className="mr-1 dark:hover:text-accentDark"
                         type="button"
                         onClick={() => setMode(mode === "light" ? "dark" : "light")}>
-                    <SunIcon />
+                        { mode === "light" ? <MoonIcon /> : <SunIcon /> }
                 </button>
             </nav>
             <div className="hidden sm:flex items-center">
