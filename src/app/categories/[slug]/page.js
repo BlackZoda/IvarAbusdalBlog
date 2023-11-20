@@ -13,7 +13,7 @@ export async function generateStaticParams() {
     allBlogs.map(blog => {
         if (blog.isPublished) {
             blog.tags.map(tag => {
-                const slugified = slugger.slug(tag);
+                let slugified = slugger.slug(tag);
                 if (!categories.includes(slugified)) {
                     categories.push(slugified);
                     paths.push({slug: slugified})
@@ -28,10 +28,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
 
     return {
-        title: `${params.slug} blogs`,
+        title: `${params.slug.replaceAll("-"," ")} Blogs`,
         description: `Learn more about ${params.slug === "all" ?
-                "programming, illustration, and graphic design" :
-                params.slug.replace("-", " ")} through my collection of blogs, tutorials, and articles.`,
+                "web development" : params.slug}
+                through our collection of expert blogs and tutorials`,
     }
 }
 
@@ -56,7 +56,7 @@ const CategoryPage = ({ params }) => {
             <h1 className="mt-4 font-semibold text-2xl md:text-4xl lg:text-5xl">
                 #{params.slug}
             </h1>
-            <span className="mt-2 inline-block">Discover categories and learn more!</span>
+            <span className="mt-2 inline-block">Discover articles by category and learn more!</span>
         </div>
         <Categories categories={allCategories} currentSlug={params.slug} />
 

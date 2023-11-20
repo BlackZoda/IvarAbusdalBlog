@@ -1,10 +1,10 @@
-import Header from '@/src/components/Header'
 import './globals.css'
 import { cx } from '@/src/utils'
 import { Inter, Manrope } from 'next/font/google'
+import Header from '@/src/components/Header'
 import Footer from '../components/Footer'
-import { siteMetaData } from '../utils/siteMetaData'
 import Script from 'next/script'
+import siteMetaData from '../utils/siteMetaData'
 const inter = Inter({ subsets: ['latin'], display: "swap", variable: "--font-in" })
 const manrope = Manrope({ subsets: ['latin'], display: "swap", variable: "--font-mr" })
 
@@ -21,7 +21,7 @@ export const metadata = {
         url: siteMetaData.siteUrl,
         siteName: siteMetaData.title,
         images: [
-            siteMetaData.socialBanner
+            siteMetaData.socialBanner,
         ],
         locale: 'en_US',
         type: 'website',

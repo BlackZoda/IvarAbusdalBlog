@@ -1,11 +1,10 @@
 "use client"
-
 import React, { useState } from 'react'
 import Logo from './logo';
 import Link from 'next/link';
 import { LinkedinIcon, GithubIcon, SunIcon } from '../icons';
-import { siteMetaData } from '@/src/utils/siteMetaData';
 import { useThemeSwitch } from '../Hooks/useThemeSwitch';
+import siteMetaData from '@/src/utils/siteMetaData';
 
 const Header = () => {
 
@@ -77,9 +76,11 @@ const Header = () => {
                 </button>
             </nav>
             <div className="hidden sm:flex items-center">
-                <a href={siteMetaData.linkedin} target="_blank" rel="noreferrer" className="inline-block w-6 h-6 mr-4">
+                <a href={siteMetaData.linkedin}
+                        target="_blank" rel="noreferrer" className="inline-block w-6 h-6 mr-4">
                     <LinkedinIcon className="hover:scale-125 transition-all ease duration-200" /></a>
-                <a href={siteMetaData.github} target="_blank" rel="noreferrer" className="inline-block w-6 h-6 mr-4">
+                <a href={siteMetaData.github}
+                        target="_blank" rel="noreferrer" className="inline-block w-6 h-6 mr-4">
                     <GithubIcon className="hover:scale-125 transition-all ease duration-200 dark:fill-light" /></a>
             </div>
         </header>

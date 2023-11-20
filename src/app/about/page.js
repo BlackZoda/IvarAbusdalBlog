@@ -1,4 +1,3 @@
-import AboutCoverSection from "@/src/components/About/AboutCoverSection";
 import Image from 'next/image';
 import React from 'react';
 import profileCharacter from "@/public/ivaricon.svg";
@@ -25,13 +24,13 @@ export default function About() {
                     justify-center p-5 xs:p-10 lg:px-16">
                 <h2 className="font-bold capitalize text-xl sm:text-2xl lg:text-4xl
                         text-center md:text-left">
-                    I'm a fullstack developer, illustrator and graphic designer
+                    I&apos;m a fullstack developer, illustrator and graphic designer
                 </h2>
                 <p className="font-medium mt-4 text-sm sm:text-base text-center md:text-left">
-                    I'm a full stack developer with experience in C#, Python,
+                    I&apos;m a full stack developer with experience in C#, Python,
                     and JavaScript, frameworks such as ASP.NET, React, database
                     solutions such as MS SQL Server and CosmosDB, and cloud providers
-                    like Azure. I'm a quick learner and collaborate closely with
+                    like Azure. I&apos;m a quick learner and collaborate closely with
                     clients to create efficient, scalable, and user-friendly solutions
                     that solve real-world problems. I also have many years of experience
                     with illustration and graphic design.

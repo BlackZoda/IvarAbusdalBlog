@@ -4,7 +4,7 @@ import React from "react";
 import { useForm } from 'react-hook-form';
 import { LinkedinIcon, GithubIcon } from "../icons";
 import Link from "next/link";
-import { siteMetaData } from "@/src/utils/siteMetaData";
+import siteMetaData from "@/src/utils/siteMetaData";
 
 const Footer = () => {
     
