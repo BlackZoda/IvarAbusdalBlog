@@ -4,7 +4,7 @@ import Image from 'next/image';
 import BlogDetails from '@/src/components/Blog/BlogDetails';
 import RenderMdx from '@/src/components/Blog/RenderMdx';
 import { slug } from "github-slugger";
-import { siteMetaData } from '@/src/utils/siteMetaData';
+import siteMetaData from '@/src/utils/siteMetaData';
 
 
 export async function generateStaticParams() {

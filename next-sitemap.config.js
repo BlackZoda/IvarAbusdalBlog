@@ -1,4 +1,4 @@
-const { siteMetaData } = require("./src/utils/siteMetaData");
+const siteMetaData = require("./src/utils/siteMetaData");
 
 module.exports = {
   siteUrl: process.env.SITE_URL || siteMetaData.siteUrl, 
