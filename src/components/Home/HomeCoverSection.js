@@ -19,6 +19,8 @@ const HomeCoverSection = ({blogs}) => {
                     blurDataURL={blog.image.blurhashDataUrl}
                     alt={blog.title}
                     fill
+                    sizes="100vw"
+                    priority
                     className="w-full h-full object-center object-cover rounded-3xl -z-10"/>
                 <div className="w-full lg:w-3/4 p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col items-start justify-center z-0 text-light">
                     <Tag link={`/categories/${slug(blog.tags[0])}`} name={blog.tags[0]} />
