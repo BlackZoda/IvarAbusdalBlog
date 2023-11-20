@@ -58,7 +58,36 @@ export default function BlogPage({ params }) {
 
     const blog = allBlogs.find(blog => blog._raw.flattenedPath === params.slug);
 
+    let imageList = [siteMetaData.socialBanner]
+    if(blog.image) {
+        imageList = typeof blog.image.filePath === "string" ?
+            [siteMetaData.siteUrl + blog.image.filePath.replace("../public", "")] :
+            blog.image
+    }
+
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": blog.title,
+        "description": blog.description,
+        "image": [
+            imageList
+        ],
+        "datePublished": new Date(blog.publishedAt).toISOString,
+        "dateModified": new Date(blog.updatedAt).toISOString,
+        "author": [{
+            "@type": "Person",
+            "name": blog?.author ? [blog.author] : siteMetaData.author,
+            "url": siteMetaData.linkedin
+        }]
+    }
+
     return (
+        <>
+        <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <article>
             <div className="mb-8 text-center relative w-full h-[70vh] bg-dark">
                 <div className="w-full z-10 flex flex-col items-center justify-center
@@ -125,6 +154,7 @@ export default function BlogPage({ params }) {
                 <RenderMdx blog={blog} />
             </div>
         </article>
+        </>
     );
 }
 
