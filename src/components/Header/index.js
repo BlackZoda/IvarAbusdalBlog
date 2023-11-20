@@ -69,7 +69,7 @@ const Header = () => {
                 <Link href="/about" className="mx-0 hover:text-accent dark:hover:text-accentDark">About</Link>
                 <Link href="http://www.abusdal.pro" target="_blank"
                         className="mx-2 hover:text-accent dark:hover:text-accentDark font-semibold">CV</Link>
-                <button className="mx-1 dark:hover:text-accentDark"
+                <button className="mx-1 hover:text-accent dark:hover:text-accentDark"
                         type="button"
                         onClick={() => setMode(mode === "light" ? "dark" : "light")}>
                         { mode === "light" ? <MoonIcon /> : <SunIcon /> }
