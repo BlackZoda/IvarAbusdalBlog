@@ -6,7 +6,7 @@ const siteMetaData = {
     description: 'A blog about programming, illustration, graphic design, and other random topics.',
     language: 'un-US',
     theme: 'system',
-    siteUrl: 'http://localhost:3000',
+    siteUrl: 'https://ivar-abusdal-blog.vercel.app',
     siteLogo: 'iaa_logo.svg',
     socialBanner: '/social_banner.png',
     github: 'https://github.com/blackzoda',
