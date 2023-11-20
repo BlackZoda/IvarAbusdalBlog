@@ -19,7 +19,7 @@ const Footer = () => {
     console.error(errors);
     
     return (
-        <footer className="mt-16 rounded-2xl bg-dark/90 dark:bg-accentDark/80 m-5 sm:m-10 flex flex-col
+        <footer className="mt-16 rounded-2xl bg-dark/90 dark:bg-accentDark/60 m-5 sm:m-10 flex flex-col
                 items-center text-light dark:text-dark">
             <h3 className="mt-16 font-medium text-center dark:font-bold capitalize text-xl
                     xs:text-2xl sm:text-3xl lg:text-4xl">
@@ -41,6 +41,9 @@ const Footer = () => {
                 <input type="submit" className="bg-dark dark:bg-light text-light dark:text-dark
                         cursor-pointer font-medium rounded px-3 sm:px-5 py-1" />
             </form>
+            <div className="h-12 w-60 bg-red-800 rounded-xl mt-6">
+               <p className="block text-light text-lg mt-2 text-center font-black">Not implemented yet!</p> 
+            </div>
             <div className="flex items-center mt-8">
                 <a href={siteMetaData.linkedin} target="_blank" rel="noreferrer"
                         className="inline-block w-6 h-6 mr-4">
