@@ -15,7 +15,6 @@ const BlogLayoutOne = ({blog}) => {
                 alt={blog.title}
                 width={blog.image.width}
                 height={blog.image.height}
-                sizes="{max-width: 1600px} 100vw, 100vw"
                 className="aspect-square sm:aspect-auto w-full h-full object-cover object-center rounded-xl
                         group-hover:scale-105 transition-all ease duration-300"/>
 
