@@ -17,6 +17,7 @@
     "autoprefixer": "10.4.15",
     "contentlayer": "^0.3.4",
     "date-fns": "^2.30.0",
+    "esbuild": "^0.19.6",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "github-slugger": "^2.0.0",
