@@ -8,7 +8,7 @@ const siteMetaData = {
     theme: 'system',
     siteUrl: 'https://ivar-abusdal-blog.vercel.app',
     siteLogo: 'iaa_logo.svg',
-    socialBanner: '/social_banner.png',
+    socialBanner: '/social-banner.png',
     github: 'https://github.com/blackzoda',
     linkedin: 'https://www.linkedin.com/in/ivar-alexander-abusdal-222701bb/',
     locale: 'en-US'
