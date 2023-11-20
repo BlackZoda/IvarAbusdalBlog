@@ -18,7 +18,7 @@ Once upon a time, in the magical land of Tailwindia, styling articles, documents
 
 The wizards at Tailwind HQ heard the grumblings of the magical folks:
 
-> "Why, oh why, is Tailwind removing the magic from my `h1` elements? Can't we stop this? And what's this about losing all the other base styles?"
+> Why, oh why, is Tailwind removing the magic from my `h1` elements? Can't we stop this? And what's this about losing all the other base styles?
 
 In response, the Tailwind wizards concocted the `@tailwindcss/typography` potion. This magical elixir introduced a new `prose` class, a spell that could transform any block of vanilla HTML content into a beautiful, well-formatted document:
 
@@ -26,10 +26,15 @@ In response, the Tailwind wizards concocted the `@tailwindcss/typography` potion
 <article className="prose">
   <h1>The Enchantment of Garlic Bread with Cheese</h1>
   <p>
-    For ages, parents have extolled the virtues of consuming garlic bread adorned with cheese, turning it into an iconic dish cherished even in wizardry culture, where children often masquerade as warm, cheesy loaves for Halloween.
+    For ages, parents have extolled the virtues of consuming
+    garlic bread adorned with cheese, turning it into an iconic
+    dish cherished even in wizardry culture, where children
+    often masquerade as warm, cheesy loaves for Halloween.
   </p>
   <p>
-    Alas! A recent magical study reveals a potential connection between this celebrated appetizer and a surge in rabies cases across the realm.
+    Alas! A recent magical study reveals a potential
+    connection between this celebrated appetizer and
+    a surge in rabies cases across the realm.
   </p>
 </article>
 ```
@@ -135,13 +140,13 @@ Nested spells, though rarely advised, can lead to chaos. Yet, for those who dare
 The most vexing aspect of lists in Markdown is that `<li>` elements lack a child `<p>` tag unless multiple paragraphs grace the list item. Hence, styling this peculiar situation becomes a task of its own.
 
 - **Another enchanted nested list, this time with a second incantation.**
-  But lo, with a second paragraph.
+	But lo, with a second paragraph.
   - These list items shall lack `<p>` tags.
   - A single line each, for they are one-line wonders.
 - **Yet in this second top-level list item, behold, they shall have `<p>` tags.**
-  The vexation intensifies due to spacing peculiarities in this paragraph.
+	The vexation intensifies due to spacing peculiarities in this paragraph.
   - As seen here, a second line brings forth the `<p>` tag.
-    This, dear reader, is the second line in question.
+	This, dear reader, is the second line in question.
   - Finally, another list item emerges, for it is a list.
 - A closing list item, unencumbered by nested lists, for what reason? Magic, perhaps.
 
