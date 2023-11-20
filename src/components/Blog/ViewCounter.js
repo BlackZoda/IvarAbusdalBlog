@@ -35,7 +35,7 @@ const ViewCounter = ({ slug, noCount=false, showCount=true }) => {
         };
 
         if (!noCount) {
-            return () => incrementView();
+            incrementView();
         }
 
     }, [slug, noCount]);
@@ -61,7 +61,7 @@ const ViewCounter = ({ slug, noCount=false, showCount=true }) => {
             }
         };
         
-        return () => getViews();
+        getViews();
 
     }, [slug]);
 
