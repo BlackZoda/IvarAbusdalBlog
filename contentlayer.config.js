@@ -74,7 +74,7 @@ const Blog = defineDocumentType(() => ({
 }));
 
 const codeOptions = {
-    theme: 'one-dark-pro'
+    theme: 'material-theme-darker'
 }
 
 export default makeSource({

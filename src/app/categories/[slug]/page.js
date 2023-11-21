@@ -13,7 +13,7 @@ export async function generateStaticParams() {
     allBlogs.map(blog => {
         if (blog.isPublished) {
             blog.tags.map(tag => {
-                let slugified = slugger.slug(tag);
+                const slugified = slugger.slug(tag);
                 if (!categories.includes(slugified)) {
                     categories.push(slugified);
                     paths.push({slug: slugified})
@@ -30,8 +30,8 @@ export async function generateMetadata({ params }) {
     return {
         title: `${params.slug.replaceAll("-"," ")} Blogs`,
         description: `Learn more about ${params.slug === "all" ?
-                "web development" : params.slug}
-                through our collection of expert blogs and tutorials`,
+                "programming, illustration, and graphic design" :
+                params.slug.replace("-", " ")} through my collection of blogs, tutorials, and articles.`,
     }
 }
 
