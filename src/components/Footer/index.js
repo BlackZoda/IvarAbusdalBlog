@@ -53,7 +53,7 @@ const Footer = () => {
                     <GithubIcon className="fill-light dark:fill-dark hover:scale-125 transition-all ease duration-200" />
                 </a>
             </div>
-            <div className="w-full mt-16 md:mt-24 relative font-medium border-t border-solid
+            <div className="w-full mt-12 md:mt-18 relative font-medium border-t border-solid
                     border-light py-6 px-8 flex flex-col md:flex-row items-center justify-between
                     text-xs md:text-sm xl:text-base">
                 <span className="text-center">&copy; 2023 Ivar A. Abusdal. All rights reserved.</span>
