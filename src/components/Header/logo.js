@@ -11,7 +11,7 @@ const Logo = () => {
                         priority
                         size="33vw" />
             </div>
-            <span className="font-bold dark:font-semibold text-base md:text-xl">
+            <span className="mt-0.5 font-bold dark:font-semibold text-base text-lg md:text-xl">
                 Ivar <span className="hidden md:inline lg:hidden">A.</span>
                 <span className="inline sm:hidden lg:inline">Alexander</span> Abusdal
             </span>
