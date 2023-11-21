@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
 
-    const blog = allBlogs.find(blog => blog._raw.flattenedPath);
+    const blog = allBlogs.find(blog => blog._raw.flattenedPath === params.slug);
 
     if (!blog) {
         return;
