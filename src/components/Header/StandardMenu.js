@@ -9,7 +9,7 @@ const StandardMenu = () => {
 
     return (
         <>
-            <nav className="w-max py-2 px-2 md:px-4 border border-solid border-dark dark:border-light
+            <nav className="w-max py-2 px-2 md:px-4 lg:mt-1 border border-solid border-dark dark:border-light
                     rounded-full text-sm md:text-base lg:text-lg capitalize hidden sm:flex
                     items-center fixed top-5 right-1/2 translate-x-1/2 bg-light/80 dark:bg-dark/80
                     backdrop-blur-sm z-50 text-dark dark:text-light text-light lg:text-base">
