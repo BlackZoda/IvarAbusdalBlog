@@ -11,12 +11,12 @@ const RecentPosts = ({blogs}) => {
         <div className="flex w-full justify-between">
             <h2 className="w-fit inline-block font-bold capitalize text-xl xs:text-2xl sm:text-3xl
                     md:text-4xl text-dark dark:text-light ml-3 sm:ml-5 lg:ml-10">
-                Recent Posts
+                Enthralling Epistles
             </h2>
-            <Link href="/categories/all" className="inline-block font-medium
+            <Link href="/categories/all" className="inline-block font-medium lowercase
                     text-accent dark:text-accentDark underline underline-offset-2
                     text-base md:text-lg mr-8 lg:mr-16">
-                view all
+                Explore the Entire Grimoire
             </Link>
         </div>
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 2xl:grid-cols-6

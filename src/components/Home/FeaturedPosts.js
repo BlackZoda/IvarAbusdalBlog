@@ -11,7 +11,7 @@ const FeaturedPosts = ({blogs}) => {
         <h2 className="w-full inline-block font-bold capitalize text-xl xs:text-2xl sm:text-3xl
                 md:text-4xl text-dark dark:text-light
                 ml-6 sm:ml-12 lg:ml-20">
-            Featured Posts
+            Sorcerer's Picks
         </h2>
 
         <div className="grid grid-cols-2 grid-rows-2 gap-6 mt-10 sm:mt-16">
