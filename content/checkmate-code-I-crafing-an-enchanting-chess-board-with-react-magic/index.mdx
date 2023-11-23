@@ -1,6 +1,6 @@
 ---
 type: Blog
-title: "Checkmate Code 1: Crafting an Enchanting Chess Board with React Magic"
+title: "Checkmate Code I: Crafting an Enchanting Chess Board with React Magic"
 description: "Embark on a mystical coding journey with React, Tailwind, and TypeScript to conjure a captivating chess board."
 image: "../../public/blogs/chess-board/cover-image.png"
 publishedAt: "2023-11-23"
@@ -233,8 +233,8 @@ const Board = () => {
     }
 
     return (
-        <div className="w-[60vw] h-[60vw] grid
-		        grid-rows-8 grid-cols-8">
+        <div className="w-[60vw] h-[60] grid grid-rows-8
+		        grid-cols-8 rounded-lg overflow-hidden">
            {squares.map(sq => sq)} 
         </div>
     )
@@ -282,7 +282,7 @@ export default Square;
 
 In the arcane realm of *TypeScript*, the syntax unfolds as a mysterious tapestry, where a *colon*, akin to a sorcerer's sigil, shapes the essence of variables like `color`, dictating the types they shall embrace.
 
-Enter the sacred contract, the `squareProps` interface, a tool bestowed upon us to define the very structure of an object. Behold, the incantation of `React.FC`, a TypeScript enigma allowing us to decree the accepted type for our venerable `Square` component – a dance of types in the grand masquerade of functionality.
+Enter the sacred contract, the `squareProps` interface, a tool bestowed upon us to define the very shape and structure of an object. Behold, the incantation of `React.FC`, a TypeScript enigma allowing us to decree the accepted type for our venerable `Square` component – a dance of types in the grand masquerade of functionality.
 
 Guided by the ethereal properties of `file` and `row`, the Square receives a divine revelation, discerning whether it is ordained to embody the brilliance of light or the enigmatic shadows of darkness. The mystic values of `dark` and `light`, inscribed in the ancient script of `tailwind.config.js`, converge to manifest the visual symphony of the chessboard.
 
@@ -302,8 +302,8 @@ const Board = () => {
     }
 
     return (
-        <div className="w-[60vw] h-[60vw] grid
-		        grid-rows-8 grid-cols-8">
+        <div className="w-[60vw] h-[60] grid grid-rows-8
+		        grid-cols-8 rounded-lg overflow-hidden">
            {squares.map(sq => sq)} 
         </div>
     )
