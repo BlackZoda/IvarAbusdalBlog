@@ -1,6 +1,6 @@
 ---
 type: Blog
-title: "Checkmate Code 1: Crafting an Enchanting Chess Board with React Magic!"
+title: "Checkmate Code 1: Crafting an Enchanting Chess Board with React Magic"
 description: "Embark on a mystical coding journey with React, Tailwind, and TypeScript to conjure a captivating chess board."
 image: "../../public/blogs/chess-board/cover-image.png"
 publishedAt: "2023-11-23"
@@ -29,7 +29,7 @@ Follow the prompts, choosing the path of *React*, and embrace *TypeScript* with 
 
 Much of this mystical journey unfolds with clarity, except for the arcane *SWC*, a transmutational force harnessed by [Next.js](https://nextjs.org/), the very React framework that weaves the fabric of this enchanted website.
 
-Now, traverse to the sacred directory with `cd chess-board`, invoking the command `npm install` and unleashing the spell `npm run dev` to ensure the harmony of magical forces. Behold, as the ethereal glow of a minimalist *Vite + React* website materializes while the development server weaves its arcane threads. To infuse our creation with the essence of style, execute these mystical commands:
+Now, traverse to the sacred directory with `cd chess-board`, invoking the command `npm install` and unleashing the spell `npm run dev` to ensure the harmony of magical forces. Behold, as the ethereal glow of a minimalistic *Vite + React* website materializes while the development server weaves its arcane threads. To infuse our creation with the essence of style, execute these mystical commands:
 
 ```
 npm install -D tailwindcss postcss autoprefixer
@@ -127,15 +127,15 @@ If the magic has woven as intended, you shall now witness the grand proclamation
 
 Behold the arcane knowledge bestowed upon thee! The `App()` incantation, a formidable React root component, materializes within the `<div id="root"></div>` sanctum of the `index.html` grimoire. All forthcoming conjurations shall nestle within this sacred abode. The mystic language, known as **JSX**, akin to the ancient scrolls of *HTML*, guides the uninitiated; seek enlightenment within the sacred scrolls of the <a href="https://react.dev/learn" target="_blank">React documentation</a>.
 
-In this mystical realm, embrace the term `className` in lieu of `class`, a React tradition where CSS incantations hail from the sacred script of Tailwind. Uncover the secrets within the <a href="https://tailwindcss.com/docs/installation" target="_blank">Tailwind documentation</a> whenever unfamiliar runes surface. Further, delve into the ancient manuscripts of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox" target="_blank">Flexbox</a> and the enigmatic <a>Grid</a> CSS, for in their wisdom, you shall find prowess, as we traverse their mystical landscapes extensively.
+In this mystical realm, embrace the term `className` in lieu of `class`, a React tradition where CSS incantations hail from the sacred script of Tailwind. Uncover the secrets within the <a href="https://tailwindcss.com/docs/installation" target="_blank">Tailwind documentation</a> whenever unfamiliar runes surface. Further, delve into the ancient manuscripts of CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox" target="_blank">Flexbox</a> and the enigmatic <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout" target="_blank">Grid</a> – for in their wisdom, you shall find prowess, as we traverse their mystical landscapes extensively.
 
 The mystical journey into the realm of chess unfolds before us! Prepare, for we are now poised to embark upon the enchanting creation of the chess board!
 
-##   Embarking on the Creation of the Chess Board
+## Embarking on the Creation of the Chess Board
 
 ### The Board Component
 
-We shall weave the tapestry of our chess realm by dividing it into the ethereal entities of *the board* and *the square*. Begin our magical odyssey by forging the Board component! Create a sacred folder named `components` within the mystical realm of `src`, and within it, inscribe the spellbound script of `Board.tsx`.
+We shall weave the tapestry of our chess realm by dividing it into the ethereal entities of *the board* and *the square*. Begin our magical odyssey by forging the *Board* component! Create a sacred folder named `components` within the mystical realm of `src`, and within it, inscribe the spellbound script of `Board.tsx`.
 
 ```tsx title="Board.tsx"
 const Board = () => {
@@ -149,7 +149,7 @@ const Board = () => {
 export default Board;
 ```
 
-Call forth the *Board* component from the depths of your magical repertoire! Import its essence and let it manifest within the incantations of your `App.tsx`. Let the conjured Board materialize in the sacred dance of JSX.
+Call forth the *Board* component from the depths of your magical repertoire! Import its essence and let it manifest within the incantations of your `App.tsx`. Let the conjured Board materialize in the sacred dance of *JSX*.
 
 ```tsx title="App.tsx" {2, 8}
 import './App.css'
@@ -202,7 +202,7 @@ In the arcane palette of colors, behold the hues of `light` and `dark`, destined
 
 ## Conjuring the Squares
 
-Now, let's conjure the Square component into existence, crafting it within the sacred realms of the `components` folder as `Square.tsx`.
+Now, let's conjure the *Square* component into existence, crafting it within the sacred realms of the `components` folder as `Square.tsx`.
 
 ```tsx title="Square.tsx"
 const Square = () => {
@@ -280,7 +280,7 @@ const Square : React.FC<SquareProps> = ({file, row}) => {
 export default Square;
 ```
 
-In the arcane realm of *TypeScript*, the syntax unfolds as a mysterious tapestry, where a colon, akin to a sorcerer's sigil, shapes the essence of variables like `color`, dictating the types they shall embrace.
+In the arcane realm of *TypeScript*, the syntax unfolds as a mysterious tapestry, where a *colon*, akin to a sorcerer's sigil, shapes the essence of variables like `color`, dictating the types they shall embrace.
 
 Enter the sacred contract, the `squareProps` interface, a tool bestowed upon us to define the very structure of an object. Behold, the incantation of `React.FC`, a TypeScript enigma allowing us to decree the accepted type for our venerable `Square` component – a dance of types in the grand masquerade of functionality.
 
@@ -321,9 +321,9 @@ Thus, as the cosmic energies align, the `Board.tsx` component, a weaver of desti
 
 ## Weaving the Mystical Coordinates
 
-In the enchanting realm of chess, where strategy weaves the threads of destiny, let us unveil the mystical coordinates. Embracing the ancient wisdom, files adorned with letters from *a* to *h* and rows bearing numbers *1* to *8*, guide us through the cosmic tapestry.
+In the enchanting realm of chess, where strategy weaves the threads of destiny, let us unveil the mystical coordinates. Embracing the ancient wisdom, files adorned with letters from **a** to **h** and rows bearing numbers **1** to **8**, guide us through the cosmic tapestry.
 
-Behold, as we journey through the sacred rendering, for we have conjured the squares from the celestial top-left to the earthly embrace of the right-bottom. As the chessboard unfolds, a dance of coordinates ensues, a symphony of letters and numbers resonating with the very essence of the game—a magical convergence of strategy and spatial incantations.
+Behold, as we journey through the divine rendering, for we have conjured the squares from the celestial top-left to the earthly embrace of the right-bottom. As the chessboard unfolds, a dance of coordinates ensues, a symphony of letters and numbers resonating with the very essence of the game—a magical convergence of strategy and spatial incantations.
 
 ```tsx title="Square.tsx"
 interface squareProps {
@@ -363,7 +363,7 @@ export default Square;
 ```
 
   
-Behold the wondrous orchestration of the mystical `size:class` notation – a magical incantation that weaves responsive spells across the chessboard. As the enchanting melodies of Tailwind resonate through the cosmos, the coordinates dance with the changing tides of screen dimensions.
+Behold the wondrous orchestration of the mystical *size:class* notation – a spectral incantation that weaves responsive spells across the chessboard. As the enchanting melodies of Tailwind resonate through the cosmos, the coordinates dance with the changing tides of screen dimensions.
 
 Gaze upon the result, a marvel of responsiveness, where the chessboard adapts and transforms like a shape-shifting sorcerer. In this mystical display, the coordinates unfold in harmony, a testament to the magical synergy between the ancient art of chess and the modern spells of Tailwind.
 
