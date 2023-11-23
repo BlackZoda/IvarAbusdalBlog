@@ -1,4 +1,4 @@
-import siteMetaData from '@/src/utils/siteMetaData';
+import siteMetaData from '../../utils/siteMetaData';
 import { LinkedinIcon, GithubIcon } from '../icons';
 
 const SocialMenu = () => {

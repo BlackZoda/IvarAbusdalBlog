@@ -1,4 +1,4 @@
-import { cx } from '@/src/utils/'
+import { cx } from '../utils/'
 
 export const LinkedinIcon = ({className, ...rest}) => (
   <svg
