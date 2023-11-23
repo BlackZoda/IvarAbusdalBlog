@@ -14,6 +14,8 @@
                     accent: "#52d", 
                     accentDark: "#fc7",
                     gray: "#747474",
+                    goldenLight: "#fadcb9",
+                    goldenDark: "#a08c78",
                 },
                 fontFamily: {
                     mr: ["var(--font-mr)"],

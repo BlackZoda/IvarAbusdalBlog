@@ -17,7 +17,9 @@ tags:
 
 Behold, fellow enchanters! In this initial installment, we'll conjure the foundation – a responsive board adorned with coordinates – paving the way for the formidable challenges of implementing pieces and rules in the chapters to come.
 
-In case you find yourself ensnared, seek the mystical solutions within the <a href="https://github.com/BlackZoda/Checkmate-Code/" target="_blank">GitHub repository</a> for this enthralling project.
+In case you find yourself ensnared, seek the mystical solutions within the <a href="https://github.com/BlackZoda/Checkmate-Code/" target="_blank">GitHub archive</a> for this enthralling project.
+
+Peer into the [mystical reflection of the enchanted finale](http://localhost:3000/demos/checkmate-code-i), a mere suggestion of the magical outcome that awaits. Feel free to cast your own spells of alteration upon it, for the magic is yours to shape and command.
 
 ## General Incantations
 
@@ -61,7 +63,7 @@ Replace the essence of `index.css` with these sacred directives, each resonating
 @tailwind utilities;
 ```
 
-For now, let us focus our magical energies on the heart of our endeavor, the `src/App.tsx` file. Begin this mystical journey by purifying it. Cast away the unnecessary incantations by removing these highlighted lines:
+For now, let us focus our magical energies on the heart of our endeavor, the `src/App.tsx` scroll. Begin this mystical journey by purifying it. Cast away the unnecessary incantations by removing these highlighted lines:
 
 ```tsx title="App.tsx" { 1-3,  7-8, 10-31 }
 import { useState } from 'react'
@@ -127,9 +129,9 @@ If the magic has woven as intended, you shall now witness the grand proclamation
 	   height="600"
 	   alt="Initial React with Taiwind setup" />
 
-Behold the arcane knowledge bestowed upon thee! The `App()` incantation, a formidable React root component, materializes within the `<div id="root"></div>` sanctum of the `index.html` grimoire. All forthcoming conjurations shall nestle within this sacred abode. The mystic language, known as **JSX**, akin to the ancient scrolls of *HTML*, guides the uninitiated; seek enlightenment within the sacred scrolls of the <a href="https://react.dev/learn" target="_blank">React documentation</a>.
+Behold the arcane knowledge bestowed upon thee! The `App()` incantation, a formidable React root component, materializes within the `<div id="root"></div>` sanctum of the `index.html` grimoire. All forthcoming conjurations shall nestle within this sacred abode. The mystic language, known as *JSX*, akin to the ancient scrolls of *HTML*, guides the uninitiated; seek enlightenment within the sacred manuscript of the <a href="https://react.dev/learn" target="_blank">React documentation</a>.
 
-In this mystical realm, embrace the term `className` in lieu of `class`, a *React* tradition where *CSS* incantations hail from the sacred script of *Tailwind*. Uncover the secrets within the <a href="https://tailwindcss.com/docs/installation" target="_blank">Tailwind documentation</a> whenever unfamiliar runes surface. Further, delve into the ancient manuscripts of CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox" target="_blank">Flexbox</a> and the enigmatic <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout" target="_blank">Grid</a> – for in their wisdom, you shall find prowess, as we traverse their mystical landscapes extensively.
+In this mystical realm, embrace the term `className` in lieu of `class`, a *React* tradition where *CSS* incantations hail from the sacred script of *Tailwind*. Uncover the secrets within the <a href="https://tailwindcss.com/docs/installation" target="_blank">Tailwind testament</a> whenever unfamiliar runes surface. Further, delve into the ancient codex of CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox" target="_blank">Flexbox</a> and the enigmatic <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout" target="_blank">Grid</a> – for in their wisdom, you shall find prowess, as we traverse their spiritual landscapes.
 
 The mystical journey into the realm of chess unfolds before us! Prepare, for we are now poised to embark upon the enchanting creation of the chess board!
 
@@ -198,7 +200,7 @@ content: [
 }
 ```
 
-In the arcane palette of colors, behold the hues of `light` and `dark`, destined to grace our sacred squares in the forthcoming incantations. Feel free to wield your sorcerer's wand to tweak these tones at your discretion. As for the cryptic numeral `8`, it is a key to unlock the mystical grid, extending its reach to encompass the revered eight-by-eight, a realm beyond the conventional six-row grids in the standard lexicon of *Tailwind*.
+In the arcane palette of colors, behold the hues of `light` and `dark`, destined to grace our sanctified squares in the forthcoming invocations. Feel free to wield your sorcerer's wand to tweak these tones at your discretion. As for the cryptic numeral `8`, it is a key to unlock the mystical grid, extending its reach to encompass the revered eight-by-eight, a realm beyond the conventional six-row grids in the standard lexicon of *Tailwind*.
 
 ## Conjuring the Squares
 
@@ -321,7 +323,7 @@ Thus, as the cosmic energies align, the `Board.tsx` component, a weaver of desti
 
 ## Weaving the Mystical Coordinates
 
-In the enchanting realm of chess, where strategy weaves the threads of destiny, let us unveil the mystical coordinates. Embracing the ancient wisdom, files adorned with letters from **a** to **h** and rows bearing numbers **1** to **8**, guide us through the cosmic tapestry.
+In the enchanting realm of chess, where strategy weaves the threads of destiny, let us unveil the mystical coordinates. Embracing the ancient wisdom. Files adorned with letters from **a** to **h** and rows bearing numbers **1** to **8**, guide us through the cosmic tapestry.
 
 ```tsx title="Square.tsx"
 interface squareProps {
@@ -360,17 +362,103 @@ const Square : React.FC<squareProps> = ({file, row}) => {
 export default Square;
 ```
 
-  
-Behold the wondrous orchestration of the mystical *size:class* notation – a spectral incantation that weaves responsive spells across the chessboard. As the enthralling melodies of Tailwind resonate through the cosmos, the coordinates dance with the changing tides of screen dimensions.
-
-Gaze upon the result, a marvel of responsiveness, where the chessboard adapts and transforms like a shape-shifting sorcerer. In this mystical display, the coordinates unfold in harmony, a testament to the magical synergy between the ancient art of chess and the modern spells of Tailwind.
+Behold the wondrous orchestration of the mystical *size:class* notation – a spectral incantation that weaves responsive spells across the chessboard. As the enthralling melodies of *Tailwind* resonate through the cosmos, the coordinates dance with the changing tides of scrying glass dimensions.
 
 <Image src="/blogs/chess-board/chess-coordinates.png"
 	   width="600"
 	   height="600"
 	   alt="Chess board with coordinates" />
 
-Prepare yourself for the grand unveiling of the chess pieces, where the very essence of the game comes to life. In the upcoming chapters, the pawns, knights, bishops, rooks, queens, and kings shall materialize on the enchanted board, each with its own magical presence and captivating movements.
+## Scrying the square numbers
+
+Finally, conjuring the sequence of mystical square numbers, each imbued with a key, a subtle enchantment to guide us through the arcane paths of more intricate logic in the realms that lie ahead.
+
+```tsx title="Square.tsx" /squareNumber/ 
+interface squareProps {
+    file: number;
+    row: number;
+    squareNumber: number;
+}
+
+const Square : React.FC<squareProps> = ({file, row, squareNumber}) => {
+
+    const fileLetters : Array<string> =
+	    ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    const rowNumbers : Array<string> =
+	    ['1', '2', '3', '4', '5', '6', '7', '8'];
+
+    const name : string = fileLetters[file-1] +
+		rowNumbers.reverse()[row-1];
+
+    let color : string;
+
+    if (file % 2 === 0 && row % 2 !== 0 ||
+        file % 2 !== 0 && row % 2 === 0) {
+        color = "bg-dark text-light";
+    } else {
+        color = "bg-light text-dark";
+    }
+
+	return (
+		<div key={squareNumber}
+				className={`${color} h-full w-full flex
+				flex-col place-content-center`}>
+            <p className="sm:font-bold text-xs sm:text-base
+		            lg:text-xl xl:text-4xl">
+		        {name}
+			</p>
+		    <p className="text-xs md:text-sm lg:text-xl">
+			    {squareNumber}
+			</p>
+        </div>
+	)
+}
+
+export default Square;
+```
+
+```tsx title="Board.tsx" {10, 13, 16}
+import Square from "./Square";
+
+const Board = () => {
+
+    const squares = [];
+
+    for (let row = 1; row <= 8; row++) {
+        for (let file = 1; file <= 8; file++) {
+			
+			const squareNumber = (row - 1) * 8 + file;
+            
+            squares.push(
+                <Square key={squareNumber}
+		                file={file}
+		                row={row}
+		                squareNumber={squareNumber} />
+            );
+        } 
+    }
+
+    return (
+        <div className="w-[60vw] h-[60] grid grid-rows-8
+		        grid-cols-8 rounded-lg overflow-hidden">
+           {squares.map(sq => sq)} 
+        </div>
+    )
+}
+
+export default Board;
+```
+
+Gaze upon the result, a marvel of sensitivity, where the chessboard adapts and transforms like a shape-shifting sorcerer. In this mystical display, the coordinates unfold in harmony, a testament to the magical synergy between the ancient art of chess and the modern spells of *Tailwind*.
+
+<Image src="/blogs/chess-board/square-numbers.png"
+	   width="600"
+	   height="600"
+	   alt="Chess board with coordinates" />
+
+Prepare yourself for the grand unveiling of the chess pieces, where the very essence of the game comes to life. In the upcoming chapters, the *pawns*, *knights*, *bishops*, *rooks*, *queens*, and *kings* shall materialize on the enchanted board, each with its own magical presence and captivating movements.
+
+You can again bewitness the [mystical reflection of the enchanted finale](http://localhost:3000/demos/checkmate-code-i), or check out the <a href="https://github.com/BlackZoda/Checkmate-Code/" target="_blank">GitHub archive</a>, if you are in need of guidance.
 
 As we delve deeper into the realms of React and Tailwind, the chess pieces will emerge as dynamic entities, dancing across the board with the grace of ancient enchantments. Join us on this mystical journey, as the chessboard transforms into a battleground of strategic prowess and visual splendor. Until then, may your code be as elegant as the noble moves on the chessboard, and may your programming adventures be filled with joy!
 
