@@ -14,11 +14,12 @@ export default function About() {
         <section className="w-full h-auto border-y-2 border-solid border-dark
                 dark:border-light flex flex-col md:flex-row items-center justify-center
                 text-dark dark:text-light">
-            <div className="md:w-1/2 justify-center flex justify-center">
-                <Image src={profileCharacter} alt="Ivar A. Abusdal"
-                    className="h-full w-full object-contain object-center
-                            p-5 md:p-10 mt-5 md:mt-0"
-                    />
+            <div className="md:w-1/2 justify-center flex">
+                <div className="h-full w-full my-10 mx-10 rounded-2xl overflow-hidden">
+                    <Image src={profileCharacter} alt="Ivar A. Abusdal"
+                        className="h-full w-full object-contain object-center"
+                        />
+                </div>
             </div>
             <div className="w-full md:w-1/2 flex flex-col text-left items-start
                     justify-center p-5 xs:p-10 lg:px-16">
