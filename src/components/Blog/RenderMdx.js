@@ -23,8 +23,8 @@ const RenderMdx = ({blog}) => {
                 dark:prose-blockquote:bg-accentDark/20
                 dark:prose-blockquote:border-accentDark
                 dark:prose-li:marker:text-accentDark
-                first-letter:text-5xl md:first-letter:text-6xl
-                first-letter:inline-block
+                first-letter:font-sx first-letter:text-5xl
+                md:first-letter:text-6xl first-letter:inline-block
                 first-letter:pt-[4px] first-letter:float-left
                 first-letter:mr-2 first-letter:text-accent
                 dark:first-letter:text-accentDark">

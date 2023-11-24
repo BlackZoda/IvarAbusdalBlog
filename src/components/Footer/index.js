@@ -21,8 +21,8 @@ const Footer = () => {
     return (
         <footer className="mt-16 rounded-2xl bg-dark/90 dark:bg-goldenDark m-5 sm:m-10 flex flex-col
                 items-center text-light dark:text-dark">
-            <h3 className="mt-16 font-medium text-center dark:font-bold capitalize text-xl
-                    xs:text-2xl sm:text-3xl lg:text-4xl">
+            <h3 className="font-sx mt-16 font-medium text-center dark:font-bold capitalize text-2xl
+                    xs:text-3xl sm:text-4xl lg:text-5xl">
                 Newsletter
             </h3>
             <p className="mt-5 px-4 text-center w-full sm:w-3/5 font-light dark:font-medium

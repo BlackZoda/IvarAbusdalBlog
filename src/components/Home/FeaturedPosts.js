@@ -8,8 +8,8 @@ const FeaturedPosts = ({blogs}) => {
 
     return (<section className="w-full mt-16 sm:mt-20 md:mt-32 px-5 sm:px-10
                 md:px-16 xsl:px-24 flex flex-col items-center">
-        <h2 className="w-full inline-block font-bold capitalize text-xl xs:text-2xl sm:text-3xl
-                md:text-4xl text-dark dark:text-light
+        <h2 className="font-sx w-full inline-block font-bold capitalize text-2xl
+                xs:text-3xl sm:text-4xl md:text-5xl text-accent dark:text-accentDark
                 ml-6 sm:ml-12 lg:ml-20">
             Sorcerer's Picks
         </h2>

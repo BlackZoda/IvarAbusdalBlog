@@ -9,8 +9,8 @@ const RecentPosts = ({blogs}) => {
     return (<section className="w-full mt-16 pb-10 sm:mt-20 md:mt-32 px-5 sm:px-10
                 md:px-16 xsl:px-24 flex flex-col items-center">
         <div className="flex w-full justify-between">
-            <h2 className="w-fit inline-block font-bold capitalize text-xl xs:text-2xl sm:text-3xl
-                    md:text-4xl text-dark dark:text-light ml-3 sm:ml-5 lg:ml-10">
+            <h2 className="font-sx w-fit inline-block font-bold capitalize text-xl xs:text-3xl sm:text-4xl
+                    md:text-5xl text-accent dark:text-accentDark ml-3 sm:ml-5 lg:ml-10">
                 Enthralling Epistles
             </h2>
             <Link href="/categories/all" className="inline-block font-medium lowercase

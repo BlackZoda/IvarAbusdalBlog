@@ -20,6 +20,7 @@
                 fontFamily: {
                     mr: ["var(--font-mr)"],
                     in: ["var(--font-in)"],
+                    sx: ["var(--font-sx)"],
                 },
                 screens: {
                     sxl: "1180px",
