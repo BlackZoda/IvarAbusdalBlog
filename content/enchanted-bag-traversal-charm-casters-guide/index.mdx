@@ -1,225 +1,468 @@
 ---
 type: Blog
-title: "Enchanted Bag Traversal: A Charm Caster's Guide"
-description: "Unveil the magic of bag traversal using the `.forEach()` and `.map()` charms, transmuting their bags of holding."
-image: ../../public/blogs/enchanting-bag-traversal.png
-publishedAt: 2023-11-21
-updatedAt: 2023-11-21
-author: Ivar Alexander Abusdal
+title: "Checkmate Code I: Crafting an Enchanting Chess Board with React Magic"
+description: "Embark on a mystical coding journey with React, Tailwind, and TypeScript to conjure a captivating chess board."
+image: "../../public/blogs/chess-board/cover-image.png"
+publishedAt: "2023-11-23"
+updatedAt: "2023-11-23"
+author: "Ivar Alexander Abusdal"
 isPublished: true
 tags:
-  - javascript
-  - basic
+- react
+- javascript
+- typescript
+- tailwind
+- chess
 ---
-IAs any experienced witch or wizard is aware, traversing a bag of holding is a fundamental skill every aspiring charm caster must master. Come along for a journey as I teach you the graceful charm waltz to enchant any bestowed bag of holding!
 
-## Fundamental Bag Traversal: Unveiling the Mystical Essence
+Behold, fellow enchanters! In this initial installment, we'll conjure the foundation – a responsive board adorned with coordinates – paving the way for the formidable challenges of implementing pieces and rules in the chapters to come.
 
-Say you have a bag of spells scrolls obtained by ten wizard apprentices, and you want to manifest the average connotation length collected per apprentice. To manage such a challange you must have the proper knowledge, both of how to access the elements of the bag, and how to enchant each of them.
+In case you find yourself ensnared, seek the mystical solutions within the <a href="https://github.com/BlackZoda/Checkmate-Code/" target="_blank">GitHub archive</a> for this enthralling project.
 
-Beside the fundamental mantras like sequence spells, condition weaves, and perpetual conjuring charms, there are two commonly applied charms for iteration – namely the `.forEach()` and `.map()` standard charms.
+Peer into the [mystical reflection of the enchanted finale](https://ivar-abusdal-blog.vercel.app/demos/checkmate-code-i), a mere suggestion of the magical outcome that awaits. Feel free to cast your own spells of alteration upon it, for the magic is yours to shape and command.
 
-## The echoing charm signature
+## General Incantations
 
-Unlocking the secrets of bag traversal involves mastering the echoing charm signature, a potent spell pattern shared by both the `.forEach()` and `.map()` charms:
+To commence our mystical project, we shall harness the powers of [Vite](https://vitejs.dev/), [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), and [Tailwind](https://tailwindcss.com/). Fear not if these incantations seem unfamiliar; we shall guide you through the occult rituals.
 
-```js title="echoing charm signature"
-(currentElement, runeMarkOfElement, bagOfHolding) => { ... }
+```
+npm create vite@latest
 ```
 
-* **currentElement:** The current element being enchanted.
-* **indexOfElement:** The rune mark of the current element being enchanted.
-* **bagOfHolding:** The bag on to which the traversal is being performed.
+Follow the prompts, choosing the path of *React*, and embrace *TypeScript* with the bewitching *SWC* variant. Once summoned, traverse into the mystical realm.
 
-Here only the *currentElement* is a mandatory essence.
+Much of this preternatural journey unfolds with clarity, except for the arcane *SWC*, a transmutational force harnessed by [Next.js](https://nextjs.org/), the very React framework that weaves the fabric of this enchanted website.
 
-## Cube summoning
+Now, traverse to the sacred directory with `cd chess-board`, invoking the command `npm install` and unleashing `npm run dev` to ensure the harmony of elemental forces. Behold, as the ethereal glow of a minimalistic *Vite + React* website materializes while the development server weaves its arcane threads. To infuse our creation with the essence of style, execute these mystical commands:
 
-Embark on a quest to summon cubes from the depths of numeric magic within a bag of holding. Witness the wonders of both `.forEach()` and `.map()` charms, conjuring the same mystical entities:
-
-```js title="Assignment"
-/* enchantEach */
-let enchantedBag = [2, 4, 6, 8];
-enchantedBag.forEach((element, mark) => {
-	enchantedBag[mark] = element ** 3;
-});
-console.log(enchantedBag);
-
-/* mysticMap */
-let mysticBag = [2, 4, 6, 8];
-mysticBag.map((element, mark) => {
-	mysticBag[mark] = element ** 3;
-});
-console.log(mysticBag);
+```
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 ```
 
-Behold the enchanted scrolls, both revealing:
+Let *Tailwind* unfold, paving the way for the dance of styles to embellish our enchanting creation. Now, inscribe your mark upon the esoteric scroll of `tailwind.config.js`:
 
-```plaintext title="Output: Assignment"
-[8, 64, 216, 512]
-[8, 64, 216, 512]
+```js title="tailwind.config.js" {2-5} 
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
 ```
 
-## A Tale of `.forEach()` and `.map()`
+Replace the essence of `index.css` with these sacred directives, each resonating with the hermetic layers of *Tailwind*:
 
-Unveiling the first difference between `.forEach()` and `.map()` – attempt to summon with the former, and you'll encounter the _unknowable_:
-
-```js title="forEach return"
-let enchantedBag = [2, 4, 6, 8];
-
-const summonElement = enchantedBag.forEach(element => {
-	return element ** 3;
-});
-
-console.log(summonElement);
+```css title="index.css"
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
-``` plaintext title="Output: forEach return"
-undefined
+For now, let us focus our magical energies on the heart of our endeavor, the `src/App.tsx` scroll. Begin this mystical journey by purifying it. Cast away the unnecessary incantations by removing these highlighted lines:
+
+```tsx title="App.tsx" { 1-3,  7-8, 10-31 }
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
+}
+
+export default App
 ```
 
-Choose the `.map()` charm, and behold! A new bag of holding materializes:
+Then, weave a spell to conjure the essence of structure and meaning. Add the divine _div_ and _heading_ as illuminated below:
 
-```js title="map return"
-let mysticBag = [2, 4, 6, 8];
+```tsx title="App.jsx" { 5-9 }
+import './App.css'
 
-const summonElement = mysticBag.map(element => {
-	return element ** 3;
-});
+function App() {
+  return (
+	<div className="absolute top-0 left-0 w-full h-full 
+			flex justify-center items-center bg-slate-800">
+		<h1 className="text-6xl font-bold text-white/60">
+			Chess Board
+		</h1>
+	</div>
+  )
+}
 
-console.log(summonElement);
+export default App
 ```
 
-``` plaintext title="Output: map return"
-[8, 64, 216, 512]
+If the magic has woven as intended above, you shall now witness the grand proclamation of the _Chess Board_ title, majestically emerging in the very heart of your scrying glass.
+
+<Image src="/blogs/chess-board/setup.png"
+	   width="600"
+	   height="600"
+	   alt="Initial React with Taiwind setup" />
+
+Behold the arcane knowledge bestowed upon thee! The `App()` incantation, a formidable React root component, materializes within the `<div id="root"></div>` sanctum of the `index.html` grimoire. All forthcoming conjurations shall nestle within this sacred abode. The mystic language, known as *JSX*, akin to the ancient scrolls of *HTML*, guides the uninitiated; seek enlightenment within the sacred manuscript of the <a href="https://react.dev/learn" target="_blank">React archives</a>.
+
+In this mystical realm, embrace the term `className` in lieu of `class`, a *React* tradition where *CSS* incantations hail from the script of *Tailwind*. Uncover the secrets within the <a href="https://tailwindcss.com/docs/installation" target="_blank">Tailwind testament</a> whenever unfamiliar runes surface. Further, delve into the ancient codex of CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox" target="_blank">Flexbox</a> and the enigmatic <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout" target="_blank">Grid</a> – for in their wisdom, you shall find prowess, as we traverse their spiritual landscapes.
+
+The transcendent journey into the realm of chess unfolds before us! Prepare, for we are now poised to embark upon the enchanting creation of the chess board!
+
+## Embarking on the Creation of the Chess Board
+
+We shall weave the tapestry of our chess realm by dividing it into the ethereal entities of *the board* and *the square*. Beginning our magical odyssey by forging the *Board* component! Create a sanctuary folder named `components` enclosed by the realm of `src`– and within it, inscribe the spellbound script of `Board.tsx`.
+
+```tsx title="Board.tsx"
+const Board = () => {
+    return (
+        <div className="w-[60vw] h-[60vw] bg-white">
+            This is the Chess Board Speaking!
+        </div>
+    )
+}
+
+export default Board;
 ```
 
-###  Enchanted Charm Chaining
+Call forth the *Board* component from the depths of your supernatural repertoire! Import its essence and let it manifest within the incantations of your `App.tsx`. Let the conjured *Board* materialize in the sacred dance of *JSX*.
 
-Attempt a charm waltz with `.forEach()` and discover its reluctance for charm chaining, as it does not summon anything to chain:
+```tsx title="App.tsx" {2, 8}
+import './App.css'
+import Board from './components/Board'
 
-```js title="forEach chaining"
-let enchantedBag = [2, 4, 6, 8];
+function App() {
+  return (
+	<div className="absolute top-0 left-0 w-full h-full
+            flex justify-center items-center bg-slate-800">
+		<Board />
+	</div>
+  )
+}
 
-const reducedBag = enchantedBag.forEach(element => {
-	return element ** 3;
-}).reduce((a, b) => {
-	return a + b;
-});
-
-console.log(reducedBag);
+export default App
 ```
 
-```error title="forEach chaining error"
-Uncaught TypeError: Cannot read properties of undefined (reading 'reduce')
-	at <anonymous>:5:3
+Behold the canvas of enchantment! A vast, responsive expanse, a white square summoned to dominate the mystical window before you. The essence of your incantations materializes in pure, magical radiance.
+
+<Image src="/blogs/chess-board/white-board.png"
+	   width="600"
+	   height="600"
+	   alt="White responsive square for the chess board" />
+
+### A Tailwind Customization Interlude
+
+In the sacred tome of Tailwind, within the mystical configuration known as `tailwind.config.js`, inscribe these cryptic symbols under the glyphs of `extend`:
+
+```js title="tailwind.config.js" {9-12}
+/** @type {import('tailwindcss').Config} */
+export default {
+content: [
+	"./index.html",
+	"./src/**/*.{js,ts,jsx,tsx}",
+	],
+	theme: {
+		extend: {
+			'8': 'repeat(8, minmax(0, 1fr))',
+			colors: {
+				light: "#fadcb9",
+				dark: "#a08c78",
+			}
+		},
+	},
+	plugins: [],
+}
 ```
 
-Opt for the delightful `.map()` charm, and witness the magic of charm chaining:
+In the arcane palette of colors, behold the hues of `light` and `dark`, destined to grace our sanctified squares in the forthcoming invocations. Feel free to wield your sorcerer's wand to tweak these tones at your discretion. As for the cryptic numeral `8`, it is a key to unlock the holy grid, extending its reach to encompass the revered eight-by-eight, a realm beyond the conventional six-row grids in the standard lexicon of *Tailwind*.
 
-```js title="map chaining"
-let mysticBag = [2, 4, 6, 8];
+## Conjuring the Squares
 
-const reducedBag = mysticBag.map(element => {
-	return element ** 3;
-}).reduce((a, b) => {
-	return a + b;
-});
+Now, let's conjure the *Square* component into existence, crafting it within the sacred realms of the `components` folder as `Square.tsx`.
 
-console.log(reducedBag);
+```tsx title="Square.tsx"
+const Square = () => {
+	return (
+		<div className="w-full h-full border
+				border-solid border-black" />
+	)
+}
+
+export default Square;
 ```
 
-```plaintext title="Output: map chaining"
-800
+Next, let's enchant the board by populating it with mystical gray squares, seamlessly weaving them into a captivating grid while bidding farewell to the mundane white background.
+
+```tsx title="Board.tsx" {5-13, 16-19}
+import Square from "./Square";
+
+const Board = () => {
+
+    const squares = [];
+
+    for (let row = 1; row <= 8; row++) {
+        for (let file = 1; file <= 8; file++) {
+            squares.push(
+                <Square />
+            );
+        } 
+    }
+
+    return (
+        <div className="w-[60vw] h-[60] grid grid-rows-8
+		        grid-cols-8 rounded-lg overflow-hidden">
+           {squares.map(sq => sq)} 
+        </div>
+    )
+}
+
+export default Board;
+
 ```
 
-That's better – with our trusty `.map()` charm we finally managed to do some charm chaining!
+In the mystical tapestry of creation, a simple nested incantation loop is woven, conjuring forth an array of 64 sacred squares. These ethereal squares are summoned into existence within the confines of an eight-by-eight grid – aligning harmoniously from the celestial realms of the top left to the earthly bounds of the bottom right. Witness the enchantment unfold before your eyes, revealing a celestial pattern akin to this:
 
-## The Dance of Empty Bags
+<Image src="/blogs/chess-board/gray-grid.png"
+	   width="600"
+	   height="600"
+	   alt="Gray chess board squares" />
 
-Watch as `.forEach()` gracefully refrains from dancing on an empty stage:
+The configuration of the sacred `tailwind.config.js` has been attuned to the transcendent frequencies of `grid-rows-8`, ensuring the proper manifestation of this arcane grid on your viewing scrying glass.
 
-```js title="forEach empty bag"
-let emptyArray = [];
+## Infusing the Chess Board with Colors
 
-emptyArray.forEach((element, index) => {
-    // This code block will not be executed for an empty array
-    console.log(`Element at index ${index}: ${element}`);
-});
+To embark on the true journey of chessboard creation, we must infuse the squares with the essence of color, aligning them with the cosmic dance of light and shadow. In the sanctum of the *Square* component, the black border is banished, making way for a celestial algorithm that discerns the rightful hue of each square.
 
-console.log("This magical call will be revealed!");
+```tsx title="Square.tsx"
+interface SquareProps {
+	file: number;
+	row: number;
+}
+
+const Square : React.FC<SquareProps> = ({file, row}) => {
+
+	let color : string;
+
+	if (file % 2 === 0 && row % 2 !== 0 ||
+		file % 2 !== 0 && row % 2 === 0) {
+		color = "bg-dark";	
+	} else {
+		color = "bg-light";
+	}
+
+	return (
+		<div className={`${color} w-full h-full`} />
+	)
+}
+
+export default Square;
 ```
 
-```plaintext title="Output: forEach empty"
-This magical call will be revealed!
+In the arcane realm of *TypeScript*, the syntax unfolds as a mysterious tapestry, where a *colon*, akin to a sorcerer's sigil, shapes the essence of variables like `color`, dictating the types they shall embrace.
+
+Enter the sacred contract, the `squareProps` interface, a tool bestowed upon us to define the very shape and structure of an object. Behold, the incantation of `React.FC`, a TypeScript enigma allowing us to decree the accepted type for our venerable `Square` component – a dance of types in the grand masquerade of functionality.
+
+```tsx title="Board.tsx" {10}
+import Square from "./Square";
+
+const Board = () => {
+
+    const squares = [];
+
+    for (let row = 1; row <= 8; row++) {
+        for (let file = 1; file <= 8; file++) {
+            squares.push(
+                <Square file={file} row={row} />
+            );
+        } 
+    }
+
+    return (
+        <div className="w-[60vw] h-[60] grid grid-rows-8
+		        grid-cols-8 rounded-lg overflow-hidden">
+           {squares.map(sq => sq)} 
+        </div>
+    )
+}
+
+export default Board;
 ```
 
-Meanwhile, `.map()` joyfully returns an empty bag, ever ready for a charm waltz!
+Guided by the ethereal properties of `file` and `row`, the *Square* receives a divine revelation, discerning whether it is ordained to embody the brilliance of light or the enigmatic shadows of darkness.
 
-```js title="map empty bag"
-let emptyBag = [];
+<Image src="/blogs/chess-board/chess-board.png"
+	   width="600"
+	   height="600"
+	   alt="Chess board with colored squares" />
 
-let mappedBag = emptyBag.map((element, index) => {
-    // This code block will not be executed for an empty array
-    return `Element at index ${index}: ${element}`;
-});
+The mystic values of `dark` and `light`, inscribed in the ancient script of `tailwind.config.js`, converge to manifest the visual symphony of the chessboard.
 
-console.log(mappedArray);
+## Weaving the Mystical Coordinates
+
+In the seductive realm of chess, where strategy weaves the threads of destiny, let us unveil the mystical coordinates, embracing the ancient wisdom. Files adorned with letters from **a** to **h**, and rows bearing numbers **1** to **8**, guides us through the cosmic tapestry.
+
+```tsx title="Square.tsx"
+interface squareProps {
+    file: number;
+    row: number;
+}
+
+const Square : React.FC<squareProps> = ({file, row}) => {
+
+    const fileLetters : Array<string> =
+	    ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    const rowNumbers : Array<string> =
+	    ['1', '2', '3', '4', '5', '6', '7', '8'];
+
+    const name : string = fileLetters[file-1] +
+		rowNumbers.reverse()[row-1];
+
+    let color : string;
+
+    if (file % 2 === 0 && row % 2 !== 0 ||
+        file % 2 !== 0 && row % 2 === 0) {
+        color = "bg-dark text-light";
+    } else {
+        color = "bg-light text-dark";
+    }
+
+	return (
+		<div className={`${color} h-full w-full flex
+				flex-col place-content-center`}>
+            <p className="sm:font-bold text-xs sm:text-base
+		            lg:text-xl xl:text-4xl">{name}</p>
+        </div>
+	)
+}
+
+export default Square;
 ```
 
-```plaintext title="Output: map empty"
-[]
+Behold the wondrous orchestration of the mystical *size:class* notation – a spectral incantation that weaves responsive spells across the chessboard. As the enthralling melodies of *Tailwind* resonate through the cosmos, the coordinates dance with the changing tides of scrying glass dimensions.
+
+<Image src="/blogs/chess-board/chess-coordinates.png"
+	   width="600"
+	   height="600"
+	   alt="Chess board with coordinates" />
+
+## Manifesting the square numbers
+
+Finally, conjuring the sequence of mystical square numbers, each imbued with a key, a subtle enchantment to guide us through the arcane paths of more intricate logic in the realms that lie ahead.
+
+```tsx title="Square.tsx" /squareNumber/ 
+interface squareProps {
+    file: number;
+    row: number;
+    squareNumber: number;
+}
+
+const Square : React.FC<squareProps> = ({file, row, squareNumber}) => {
+
+    const fileLetters : Array<string> =
+	    ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    const rowNumbers : Array<string> =
+	    ['1', '2', '3', '4', '5', '6', '7', '8'];
+
+    const name : string = fileLetters[file-1] +
+		rowNumbers.reverse()[row-1];
+
+    let color : string;
+
+    if (file % 2 === 0 && row % 2 !== 0 ||
+        file % 2 !== 0 && row % 2 === 0) {
+        color = "bg-dark text-light";
+    } else {
+        color = "bg-light text-dark";
+    }
+
+	return (
+		<div key={squareNumber}
+				className={`${color} h-full w-full flex
+				flex-col place-content-center`}>
+            <p className="sm:font-bold text-xs sm:text-base
+		            lg:text-xl xl:text-4xl">
+		        {name}
+			</p>
+		    <p className="text-xs md:text-sm lg:text-xl">
+			    {squareNumber}
+			</p>
+        </div>
+	)
+}
+
+export default Square;
 ```
 
-##  The Fate of the Original Bag
+```tsx title="Board.tsx" {10, 13, 16}
+import Square from "./Square";
 
-When you invoke the `.map()` charm on a bag of holding, you don't alter it. The content stay just the same, no matter how you conjure the calback charm!
+const Board = () => {
 
-```js title="non-altering map"
-let mysticBagOfNumbers = [1, 2, 3, 4];
-console.log("Original Bag:", mysticBagOfNumbers);
+    const squares = [];
 
-let squaredBagOfNumbers = mysticBagOfNumbers.map((element) => {
-    // Squaring each element and creating a new array
-    return element * element;
-});
+    for (let row = 1; row <= 8; row++) {
+        for (let file = 1; file <= 8; file++) {
+			
+			const squareNumber = (row - 1) * 8 + file;
+            
+            squares.push(
+                <Square key={squareNumber}
+		                file={file}
+		                row={row}
+		                squareNumber={squareNumber} />
+            );
+        } 
+    }
 
-console.log("Original Bag (after map):", mysticBagOfNumbers);
-console.log("New Bag (from map):", squaredBagOfNumbers);
+    return (
+        <div className="w-[60vw] h-[60] grid grid-rows-8
+		        grid-cols-8 rounded-lg overflow-hidden">
+           {squares.map(sq => sq)} 
+        </div>
+    )
+}
+
+export default Board;
 ```
 
-```plaintext title="Output: non-altering map"
-Original Bag: (4) [1, 2, 3, 4]
-Original Bag (after map): (4) [1, 2, 3, 4]
-New Bag (from map): (4) [1, 4, 9, 16]
-```
+Gaze upon the result, a marvel of sensitivity, where the chessboard adapts and transforms like a shape-shifting windigo. In this mystical display, the coordinates unfold in harmony, a testament to the magical synergy between the ancient art of chess and the modern spells of *Tailwind*.
 
-In contrast, the mischievous pixie dust of `.forEach()` swirls, altering the original bag:
+<Image src="/blogs/chess-board/square-numbers.png"
+	   width="600"
+	   height="600"
+	   alt="Chess board with coordinates" />
 
-```js title="non-altering map"
-let bagOfNumbers = [1, 2, 3, 4];
-console.log("Original bagOfNumbers:", bagOfNumbers);
+Prepare yourself for the grand unveiling of the chess pieces, where the very essence of the game comes to life. In the upcoming chapters, the *pawns*, *knights*, *bishops*, *rooks*, *queens*, and *kings* shall materialize on the enchanted board, each with its own magical presence and captivating movements.
 
-bagOfNumbers.forEach((element, index, array) => {
-    // Squaring each element and modifying the original array
-    array[index] = element * element;
-});
+You can again bewitness the [mystical reflection of the enchanted finale](https://ivar-abusdal-blog.vercel.app/demos/checkmate-code-i), or check out the <a href="https://github.com/BlackZoda/Checkmate-Code/" target="_blank">GitHub archive</a>, if you are in need of guidance.
 
-console.log("Modified bagOfNumbers (after forEach):", bagOfNumbers);
-```
+As we delve deeper into the realms of *React* and *Tailwind*, the chess pieces will emerge as dynamic entities, dancing across the board with the grace of ancient enchantments.
 
-```plaintext title="Output: non-altering map"
-Original bagOfNumbers: (4) [1, 2, 3, 4]
-Modified bagOfNumbers (after forEach): (4) [1, 4, 9, 16]
-```
+Join us on this mystical journey, as the chessboard transforms into a battleground of strategic prowess and visual splendor. Until then, may your code be as elegant as the noble moves on the chessboard, and may your charm casting adventures be filled with splendour!
 
-## Summary
-
-| .enchantEach()                                                                                         | mysticMap()                                                                                |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| The `.forEach()` charm can't summon any new bags based on the original bag of holding.                 | The `.map()` charm will summon an entirely new bag of holding for you!                     |
-| The `.forEach()` charm only sommons something `unknowable`.                                            | The `.map()` charm will summon the newly created bag according to the given echoing charm. |
-| The `.forEach()` charm doesn't summon anything kowable, hence it can't be used for charm chaining. | The `.map()` charm can be used for charm chaining with other charms.                 |
-| The `.forEach()` charm can't be chanted for empty elements.                                         | The `map()` charm does not alter the original bag of holding.                        |
-
-Whether you seek the mystique of the summoned entity or aim to transmute the original bag of holding, the choice between `.forEach()` and `.map()` is a magical decision. Use the `.map()` charm for delightful summoning and charm chaining, or opt for the mischievous dance of `.forEach()` to transmute the original bag. May your magical journeys be whimsical and enchanting!
