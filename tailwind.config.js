@@ -10,7 +10,7 @@
             extend: {
                 colors: {
                     dark: "#1b1b1b",
-                    light: "#e1dccd",
+                    light: "#e1d7c8",
                     accent: "#52d", 
                     accentDark: "#fc7",
                     gray: "#747474",
