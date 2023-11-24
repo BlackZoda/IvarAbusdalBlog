@@ -246,12 +246,14 @@ export default Board;
 
 ```
 
-In the mystical tapestry of creation, a simple nested incantation loop is woven, conjuring forth an array of 64 sacred squares. These ethereal squares are summoned into existence within the confines of an eight-by-eight grid – aligning harmoniously from the celestial realms of the top left to the earthly bounds of the bottom right. The configuration of the sacred `tailwind.config.js` has been attuned to the mystical frequencies of `grid-rows-8`, ensuring the proper manifestation of this arcane chess board on your viewing scrying glass. Witness the enchantment unfold before your eyes, revealing a celestial pattern akin to this:
+In the mystical tapestry of creation, a simple nested incantation loop is woven, conjuring forth an array of 64 sacred squares. These ethereal squares are summoned into existence within the confines of an eight-by-eight grid – aligning harmoniously from the celestial realms of the top left to the earthly bounds of the bottom right. Witness the enchantment unfold before your eyes, revealing a celestial pattern akin to this:
 
 <Image src="/blogs/chess-board/gray-grid.png"
 	   width="600"
 	   height="600"
 	   alt="Gray chess board squares" />
+
+The configuration of the sacred `tailwind.config.js` has been attuned to the mystical frequencies of `grid-rows-8`, ensuring the proper manifestation of this arcane grid on your viewing scrying glass.
 
 ## Infusing the Chess Board with Colors
 
@@ -286,8 +288,6 @@ In the arcane realm of *TypeScript*, the syntax unfolds as a mysterious tapestry
 
 Enter the sacred contract, the `squareProps` interface, a tool bestowed upon us to define the very shape and structure of an object. Behold, the incantation of `React.FC`, a TypeScript enigma allowing us to decree the accepted type for our venerable `Square` component – a dance of types in the grand masquerade of functionality.
 
-Guided by the ethereal properties of `file` and `row`, the *Square* receives a divine revelation, discerning whether it is ordained to embody the brilliance of light or the enigmatic shadows of darkness. The mystic values of `dark` and `light`, inscribed in the ancient script of `tailwind.config.js`, converge to manifest the visual symphony of the chessboard.
-
 ```tsx title="Board.tsx" {10}
 import Square from "./Square";
 
@@ -314,12 +314,14 @@ const Board = () => {
 export default Board;
 ```
 
-Thus, as the cosmic energies align, the `Board.tsx` component, a weaver of destinies, imparts unto the squares the sacred coordinates. Awakening the chessboard to a mesmerizing harmony – a magical tableau unfolds.
+Guided by the ethereal properties of `file` and `row`, the *Square* receives a divine revelation, discerning whether it is ordained to embody the brilliance of light or the enigmatic shadows of darkness.
 
 <Image src="/blogs/chess-board/chess-board.png"
 	   width="600"
 	   height="600"
 	   alt="Chess board with colored squares" />
+
+The mystic values of `dark` and `light`, inscribed in the ancient script of `tailwind.config.js`, converge to manifest the visual symphony of the chessboard.
 
 ## Weaving the Mystical Coordinates
 
@@ -369,7 +371,7 @@ Behold the wondrous orchestration of the mystical *size:class* notation – a sp
 	   height="600"
 	   alt="Chess board with coordinates" />
 
-## Scrying the square numbers
+## Manifesting the square numbers
 
 Finally, conjuring the sequence of mystical square numbers, each imbued with a key, a subtle enchantment to guide us through the arcane paths of more intricate logic in the realms that lie ahead.
 

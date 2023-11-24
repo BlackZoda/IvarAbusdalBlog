@@ -21,11 +21,13 @@ export async function generateMetadata({ params }) {
     }
 
     let imageList = [siteMetaData.socialBanner]
+
     if(blog.image) {
         imageList = typeof blog.image.filePath === "string" ?
             [siteMetaData.siteUrl + blog.image.filePath.replace("../public", "")] :
             blog.image
     }
+
     const ogImages = imageList.map(img => {
         return { url: img.includes("http") ? img: siteMetaData.siteUrl + img }
     });
@@ -59,6 +61,7 @@ export default function BlogPage({ params }) {
     const blog = allBlogs.find(blog => blog._raw.flattenedPath === params.slug);
 
     let imageList = [siteMetaData.socialBanner]
+
     if(blog.image) {
         imageList = typeof blog.image.filePath === "string" ?
             [siteMetaData.siteUrl + blog.image.filePath.replace("../public", "")] :
