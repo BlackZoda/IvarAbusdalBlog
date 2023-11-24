@@ -23,7 +23,7 @@ const Footer = () => {
                 items-center text-light dark:text-dark">
             <h3 className="font-sx mt-16 font-medium text-center dark:font-bold capitalize text-2xl
                     xs:text-3xl sm:text-4xl lg:text-5xl">
-                Newsletter
+                Enigma Bulletin
             </h3>
             <p className="mt-5 px-4 text-center w-full sm:w-3/5 font-light dark:font-medium
                     text-sm sm:text-base">
