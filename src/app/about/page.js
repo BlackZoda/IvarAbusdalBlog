@@ -29,7 +29,7 @@ export default function About() {
                 </h2>
                 <p className="font-medium mt-4 text-sm sm:text-base text-center md:text-left">
                     I&apos;m a full stack developer with experience in C#, Python,
-                    and JavaScript, frameworks such as ASP.NET, React, database
+                    and JavaScript, frameworks such as ASP.NET, React and Next.js, database
                     solutions such as MS SQL Server and CosmosDB, and cloud providers
                     like Azure. I&apos;m a quick learner and collaborate closely with
                     clients to create efficient, scalable, and user-friendly solutions

@@ -4,6 +4,8 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import GithubSlugger from "github-slugger";
 
 const Blog = defineDocumentType(() => ({
@@ -80,7 +82,15 @@ const codeOptions = {
 export default makeSource({
     contentDirPath: 'content',
     documentTypes: [Blog],
-    mdx: { remarkPlugins: [remarkGfm],
-        rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, {behavior: "append"}],
-            [rehypePrettyCode, codeOptions]] }
+    mdx: {
+        remarkPlugins: [
+            remarkGfm,
+            remarkMath
+        ],
+        rehypePlugins: [
+            rehypeSlug,
+            rehypeKatex,
+            [rehypeAutolinkHeadings, {behavior: "append"}],
+            [rehypePrettyCode, codeOptions]]
+    }
 })

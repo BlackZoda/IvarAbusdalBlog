@@ -32,6 +32,7 @@ const RenderMdx = ({blog}) => {
                 first-letter:pt-[4px] first-letter:float-left
                 first-letter:mr-2 first-letter:text-accent
                 dark:first-letter:text-accentDark">
+
             <MDXContent components={mdxComponents} />
         </div>
     );
