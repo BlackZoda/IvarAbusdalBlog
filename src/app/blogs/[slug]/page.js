@@ -5,6 +5,7 @@ import BlogDetails from '@/src/components/Blog/BlogDetails';
 import RenderMdx from '@/src/components/Blog/RenderMdx';
 import { slug } from "github-slugger";
 import siteMetaData from '@/src/utils/siteMetaData';
+import "katex/dist/katex.min.css"
 
 
 export async function generateStaticParams() {

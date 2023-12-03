@@ -2,7 +2,7 @@
 type: Blog
 title: "Algorithms I: Big O Demystified"
 description: An introduction to algorithms and Big O with with JavaScript, Python and C#.
-image: ../../public/blogs/decoding-algorithms.png
+image: ../../public/blogs/algorithms/algorithms-time-complexity.png
 publishedAt: 2023-12-03
 updatedAt: 2023-12-03
 author: Ivar Alexander Abusdal
@@ -19,7 +19,9 @@ In programming the enchantment woven into your code hinges upon unraveling the s
 In the incantations to follow, I shall illuminate the mystical concept known as **Big O** for each of these three languages. However, fear not, dear reader, for the tales shall soon diverge into separate series, aligning with your affinity for either _JavaScript_, _Python_, or the enchanting world of _C#_. Choose your preferred incantation, and let the journey unfold!
 
 I have also created a repository for each language:
-* <a href="https://github.com/BlackZoda/AlgorithmsCSharp" target="_blank">Algorithms C#</a>
+* <a href="https://github.com/BlackZoda/AlgorithmsJavaScript" target="_blank">Algorithms: JavaScript</a>
+* <a href="https://github.com/BlackZoda/AlgorithmsPython" target="_blank">Algorithms: Python</a>
+* <a href="https://github.com/BlackZoda/AlgorithmsCSharp" target="_blank">Algorithms: C#</a>
 
 ## Unveiling the Symbol: The Essence of Big O
 
@@ -37,7 +39,7 @@ Our gaze shall be fixed upon the mystical veil of **Big O time complexity**. The
 
 ### The Switft Constant Charm
 
-$$O(1)$$ reveals itself as a constant-time operation. The size of the array matters not, for time remains steadfast in its constancy.  
+$O(1)$ reveals itself as a constant-time operation. The size of the array matters not, for time remains steadfast in its constancy.  
 
 ```js title="JS: O(1)"
 const myArray = [1, 2, 3, 4, 5];
@@ -145,7 +147,7 @@ function bubbleSort(arr) {
 	const n = arr.length;
 
 	for (let i = 0; i < n - 1; i++) {
-		for (let j=0; j < n - 1 - i; j++) {
+		for (let j= 0; j < n - 1 - i; j++) {
 			if (arr[j] > arr[j + 1]) {
 				// Swap elements if they are
 				// in the wrong order
@@ -173,7 +175,7 @@ def bubble_sort(lst):
 			if lst[j] > lst[j + 1]:
 				# Swap elements if they are
 				# in the wrong order
-				lst[j], lst[j + 1] = lst[j + 1]. lst[j]
+				lst[j], lst[j + 1] = lst[j + 1], lst[j]
 
 	return lst
 	
@@ -213,7 +215,10 @@ class Program
 	{
 		int[] myArray = { 5, 3, 1, 4, 2 };
 		int[] sortedArray = BubbleSort(myArray);
-		Console.WriteLine(string.Join(", ", sortedArray));
+		foreach (int i in bubbleSortArray)
+		{
+			Console.Write(i);
+		}
 	}
 }
 ```
@@ -233,16 +238,16 @@ function binarySearch(arr, needle){
 		const mid = Math.floor((low + high) / 2);
 		const midValue = arr[mid];
 
-		if (midValue === target) {
+		if (midValue === needle) {
 			return mid;
-		} else if (midValue < target) {
+		} else if (midValue < needle) {
 			low = mid + 1;
 		} else {
 			high = mid;
 		}
 	}
 
-	return -1; 
+	return - 1; 
 }
 
 const myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -253,15 +258,15 @@ console.log(foundIndex);
 
 ```python
 def binary_search(lst, needle):
-	low,high = 0, len(lst)
+	low, high = 0, len(lst)
 
 	while low < high:
 		mid = (low + high) // 2
-		mid_vlaue = lst[mid]
+		mid_value = lst[mid]
 
-		if mid_value == target:
+		if mid_value == needle:
 			return mid
-		elif mid_value < target:
+		elif mid_value < needle:
 			low = mid + 1
 		else:
 			high = mid
@@ -332,14 +337,13 @@ function mergeSort(arr) {
 	const left = mergeSort(arr.slice(0, mid));
 	const right = mergeSort(arr.slice(mid))
 
-	console.log(`Merge left ${left} and right ${right}`)
 	return merge(left, right);
 }
 
 function merge(left, right) {
-	let result = [];
-	leftIndex = 0;
-	rightIndex = 0;
+	const result = [];
+	let leftIndex = 0;
+	let rightIndex = 0;
 
 	while (leftIndex < left.length && rightIndex < right.length) {
 		if (left[leftIndex] < right[rightIndex]) {
@@ -365,7 +369,7 @@ def merge_sort(lst):
 	if len(lst) <= 1:
 		return lst
 
-	mid = len(lst)
+	mid = len(lst) // 2
 	left = merge_sort(lst[:mid])
 	right = merge_sort(lst[mid:])
 
@@ -373,7 +377,7 @@ def merge_sort(lst):
 
 def merge(left, right):
 	result = []
-	left_index =right = 0
+	left_index = right = 0
 
 	while left_index < len(left) and right_index < len(right):
 		if left[left_index] < right[right_index]:
@@ -449,7 +453,9 @@ class Program
 	{
 		int[] myArray = { 3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5 }
 		int[] sortedArray = MergeSort(myArray);
-		Console.WriteLine(string.Join(", ", sortedArray));
+		forEach (int i in sortedArray) {
+			Console.Write(i);
+		}
 	}
 }
 ```
